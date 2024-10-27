@@ -1,5 +1,7 @@
 package com.soucedemo.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public abstract class BasePage {
@@ -16,7 +18,7 @@ public abstract class BasePage {
 
     protected void set(By locator, String text) {
         find(locator).clear();
-        find(locator).sentkeys(text);
+        find(locator).sendKeys(text);
     }
 
     protected void click(By locator){

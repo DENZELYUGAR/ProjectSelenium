@@ -22,7 +22,7 @@ public class LoginPage extends BasePage {
         return new ProductsPage();
     }
 
-    public ProductsPage loginIntoApplication(Strting username, String password){
+    public ProductsPage loginIntoApplication(String username, String password){
         setUsername(username);
         setPassword(password);
         return clickLoginButton();
