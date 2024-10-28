@@ -17,7 +17,7 @@ public class LoginPage extends BasePage {
         set(passwordField, password);
     }
 
-    public void clickLoginButton() {
+    public ProductsPage clickLoginButton() {
         click(loginButton);
         return new ProductsPage();
     }
@@ -29,6 +29,6 @@ public class LoginPage extends BasePage {
     }
 
     public String getErrorMessage(){
-        return find(ErrorMessage).getText();
+        return find(errorMessage).getText();
     }
 }

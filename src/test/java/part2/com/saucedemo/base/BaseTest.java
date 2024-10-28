@@ -19,7 +19,7 @@ public class BaseTest {
     @BeforeClass
     public void setUp() {
         driver = new ChromeDriver();
-        driver.manage().window().maximaze();
+        driver.manage().window().maximize();
         driver.get(url);
         basePage = new BasePage();
         basePage.setDriver(driver);
@@ -27,7 +27,7 @@ public class BaseTest {
     }
 
     @AfterClass
-    public boid tearDown() {
+    public void tearDown() {
         driver.quit();
     }
 }
