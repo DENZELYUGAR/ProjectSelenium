@@ -1,13 +1,11 @@
 package part2.com.saucedemo.base;
 
-import com.soucedemo.pages.BasePage;
+import com.base.BasePage;
 import com.soucedemo.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
-import java.util.SplittableRandom;
 
 public class BaseTest {
 

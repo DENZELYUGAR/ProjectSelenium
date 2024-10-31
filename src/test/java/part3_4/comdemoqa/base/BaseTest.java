@@ -1,12 +1,15 @@
 package part3_4.comdemoqa.base;
 
 import com.demoqa.pages.HomePage;
-import com.soucedemo.pages.BasePage;
+import com.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+
+import static com.base.BasePage.delay;
+import static utilities.Utility.setUtilityDriver;
 
 public class BaseTest {
 
@@ -26,13 +29,14 @@ public class BaseTest {
         driver.get(DEMOQA_URL);
         basePage = new BasePage();
         basePage.setDriver(driver);
-        homePag = new HomePage();
+        setUtilityDriver();
+        homePage = new HomePage();
     }
 
     @AfterClass
     public void tearDown() {
+        delay(3000);
         driver.quit();
     }
-
 
 }
