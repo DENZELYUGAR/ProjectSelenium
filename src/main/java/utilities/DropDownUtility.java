@@ -1,15 +1,19 @@
 package utilities;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+import java.util.stream.Collectors;
 
-public class DropDownUtility extends Utility{
+
+public class DropDownUtility extends Utility {
     private static Select findDropDown(By locator) {
         return new Select(driver.findElement(locator));
     }
 
-    public static void selectByVisilbeText(By locator, String text) {
+    public static void selectByVisibleText(By locator, String text) {
         findDropDown(locator).selectByVisibleText(text);
     }
 
@@ -19,4 +23,14 @@ public class DropDownUtility extends Utility{
 
     public static void selectByValue(By locator, String value) {
         findDropDown(locator).selectByValue(value);
+    }
+
+    public static void deselectByValue(By locator, String value) {
+        findDropDown(locator).deselectByValue(value);
+    }
+
+    public List<String> getAllSelectOptions(By locator) {
+        List<WebElement> allSelectedOptions = findDropDown(locator).getAllSelectedOptions();
+        return allSelectedOptions.stream().map(WebElement::getText).collect(Collectors.toList());
+    }
 }
