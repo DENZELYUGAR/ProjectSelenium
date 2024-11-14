@@ -29,7 +29,7 @@ public class DropDownUtility extends Utility {
         findDropDown(locator).deselectByValue(value);
     }
 
-    public List<String> getAllSelectOptions(By locator) {
+    public static List<String> getAllSelectedOptions(By locator) {
         List<WebElement> allSelectedOptions = findDropDown(locator).getAllSelectedOptions();
         return allSelectedOptions.stream().map(WebElement::getText).collect(Collectors.toList());
     }
