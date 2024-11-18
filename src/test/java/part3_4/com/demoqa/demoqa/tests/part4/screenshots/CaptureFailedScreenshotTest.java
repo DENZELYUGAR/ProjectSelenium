@@ -1,4 +1,13 @@
 package part3_4.com.demoqa.demoqa.tests.part4.screenshots;
 
-public class CaptureFailedScreenshotTest {
+import org.testng.annotations.Test;
+import part3_4.com.demoqa.demoqa.base.BaseTest;
+
+public class CaptureFailedScreenshotTest extends BaseTest {
+
+    @Test
+    public void testClickingSubmitButtonWithoutJavaScriptExecutor() {
+        var practiceFormPage = homePage.goToForms().clickPracticeForm();
+        practiceFormPage.clickSubmitButton();
+    }
 }

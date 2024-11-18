@@ -55,6 +55,7 @@ public class PracticeFormPage extends FormsPage {
     }
 
     public void clickSubmitButton() {
+        //scrollToElementJS(submitButton);
         click(submitButton);
     }
 }
